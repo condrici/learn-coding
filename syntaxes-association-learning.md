@@ -18,12 +18,25 @@ Compiled: GoLang \
 Hybrid: VisualBasic, C# (C Sharp), Java, Kotlin, Python, Swift 
 
 ### Pros
-Interpreted: Portable \
-Compiled: One executable file in machine code, faster, hardware optimized
+Interpreted: 
+- Portable
+- Easier to debug because you have access to the entire source code
+
+Compiled:
+- One executable file written in machine code
+- Faster to run
+- Optimized for the hardware it runs on
+- Source code is private
 
 ### Cons
-Interpreted: Machine running code requires interpreter, slower \
-Compiled: Not cross-platform, initial compilation takes time
+Interpreted: 
+- Machine running code requires interpreter
+- Slower
+- Source code is public
+
+Compiled: 
+- Not cross-platform
+- Initial compilation takes time
 
 ## Characteristics
 
