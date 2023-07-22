@@ -1,5 +1,17 @@
 ## Interpreted vs. Compiled
 
+### Workflow
+Interpreted: 
+- [1] Write code
+- [2] The interpreter runs the code as is
+- [3] You share your code as is (code is public) so others can run it, but they need the same interpreter
+
+Compiled: 
+- [1] Write the code
+- [2] Compiler converts your code into an executable file that contains machine code (binary code)
+- [3] You share the executable file (code is not public) so others can immediately run it
+
+
 ### Examples
 Interpreted: PHP, JavaScript \
 Compiled: GoLang \
