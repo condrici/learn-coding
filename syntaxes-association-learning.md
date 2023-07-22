@@ -1,3 +1,18 @@
+## Interpreted vs. Compiled
+
+### Examples
+Interpreted: PHP, JavaScript \
+Compiled: GoLang \
+Hybrid: VisualBasic, C# (C Sharp), Java, Kotlin, Python, Swift 
+
+### Pros
+Interpreted: Portable \
+Compiled: One executable file in machine code, faster, hardware optimized
+
+### Cons
+Interpreted: Machine running code requires interpreter, slower \
+Compiled: Not cross-platform, initial compilation takes time
+
 ## Characteristics
 
 ### Python
