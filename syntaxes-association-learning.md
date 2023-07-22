@@ -1,7 +1,7 @@
 ## Characteristics
 
 ### Python
-Type: Interpreted
+Type: Interpreted and Compiled
 Level: High level \
 
 ### JavaScript
