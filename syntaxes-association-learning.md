@@ -16,20 +16,20 @@ Compiled: Not cross-platform, initial compilation takes time
 ## Characteristics
 
 ### Python
-Type: Interpreted and Compiled
-Level: High level \
+Type: Interpreted and Compiled \
+Level: High level
 
 ### JavaScript
-Type: Interpreted
-Level: High level \
+Type: Interpreted \
+Level: High level 
 
 ### PHP
-Type: Interpreted
-Level: High level \
+Type: Interpreted \
+Level: High level
 
 ### GoLang
-Type: Compiled
-Level: High level (still it is considered a systems programming language) \
+Type: Compiled \
+Level: High level (still it is considered a systems programming language) 
 
 ## Data Types (built in)
 
