@@ -1,3 +1,21 @@
+## Characteristics
+
+### Python
+Level: High level \
+Type: Interpreted
+
+### JavaScript
+Level: High level \
+Type: Interpreted
+
+### PHP
+Level: High level \
+Type: Interpreted
+
+### GoLang
+Level: High level (still it is considered a systems programming language) \
+Type: Compiled
+
 ## Data Types (built in)
 
 ### Python (15)
