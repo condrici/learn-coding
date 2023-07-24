@@ -12,6 +12,13 @@ Compiled:
 - [3] You share the executable file (code is not public) so others can immediately run it
 
 
+### Tools
+
+Compiler Tools:
+- Debugger: step through the program assembly interactively.
+- Disassembler: view the program assembly in more detail.
+- Decompiler, turn a program back into partial source code (assuming you know what it was written in)
+
 ### Examples
 Interpreted: PHP, JavaScript \
 Compiled: GoLang \
@@ -93,3 +100,52 @@ Boolean: bool \
 Binary: byte \
 Unsorted: array, slice, struct, pointer \
 Unicode: rune
+
+## Syntax Similarities and Differences
+
+### PHP
+
+Variables
+- Declaration: $variableName = 'value'
+- Scoping: single scope only; 'global $variableName' makes variable globally accessible from other scopes
+- Passing by reference: function foo(&$var)
+
+Operators
+- Ternary operator: $result = $condition ? 'foo' : 'bar';
+- Null coalescing operator: $env = $_SERVER['APP_ENV'] ?? 'dev';
+- Null safe operator (i.e. optional chaining): $array['key']?->foo
+
+OOP
+- Access Modifiers: 'public' for public, 'protected' for protected, 'private' for private
+- Clone objects (shallow): object = clone object
+- Clone objects (deep): use special object method __clone()
+- Object interface definition: interface InterfaceName()
+- Object abstract definition: abstract ClassName()
+
+
+### JavaScript
+
+Variables
+- Declaration: let variableName = 'value' (types of declarations: let, var, const)
+- Scoping: let varName (locally/block scoped), var varName (globally scoped), const constName (locally scoped, immutable)
+- Passing by reference: -
+
+Operators
+- Ternary Operator: result = isMember ? '$2.00' : '$10.00'
+- Null coalescing operator: foo = null ?? 'default string';
+- Optional chaining (i.e. null safe): const dogName = adventurer.dog?.name;
+
+OOP
+- Access Modifiers: there is no privacy
+- Clone objects (shallow): const clone Food = { ...food }, const cloneFood = Object.assign({}, food)
+- Clone objects (deep): JSON.parse(JSON.stringify(food)); Lodash DeepClone
+- Object interface definition (TypeScript only): interface InterfaceName {} 
+- Object abstract definition: -
+
+### Python
+- Variable Scoping: single scope only; 'global var'  makes variable globally accessible from other scopes
+
+OOP
+- Access Modifiers: 'public' for public, 'protected' for protected, 'private' for private
+- Object interface definition: -
+- Object abstract definition (ABC package is needed): class ClassName(ABC):
