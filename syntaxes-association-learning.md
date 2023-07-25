@@ -2,10 +2,15 @@
 
 ### PHP
 - use declare(strict_types=1) in all files to avoid type coercion in return types and arguments, without which passing a string of "1" will be accepted by this  definition "int $a" because "1" is numeric and can be coerced to an integer
+- awareness that parent classes can access child classes by default
+
+### Python
+- awareness that parent classes cannot access child classes by default
 
 ## Interpreted vs. Compiled
 
 ### Workflow
+
 Interpreted: 
 - [1] Write code
 - [2] The interpreter runs the code as is
@@ -16,6 +21,11 @@ Compiled:
 - [2] Compiler converts your code into an executable file that contains machine code (binary code)
 - [3] You share the executable file (code is not public) so others can immediately run it
 
+Compiled Steps:
+- [1] Pre-processing
+- [2] Compiling, 
+- [3] Assembling
+- [4] Linking
 
 ### Tools
 
@@ -130,6 +140,7 @@ Operators
 - Null safe operator (i.e. optional chaining): $array['key']?->foo
 
 OOP
+- Is Everything an Object?: no (an object is a special type that has to be explicitly defined)
 - Access Modifiers: 'public' for public, 'protected' for protected, 'private' for private
 - Clone objects (shallow): object = clone object
 - Clone objects (deep): use special object method __clone()
@@ -138,6 +149,9 @@ OOP
 
 
 ### JavaScript
+
+Code Organization
+- General: there is a module concept for which there are different implementations (CommonJS, ECMAScript, TypeScript)
 
 Variables
 - Declaration: let variableName = 'value' (types of declarations: let, var, const)
@@ -150,6 +164,7 @@ Operators
 - Optional chaining (i.e. null safe): const dogName = adventurer.dog?.name;
 
 OOP
+- Is Everything an Object?: no (everything is an object except primitives: null , undefined , strings, numbers, boolean, and symbols)
 - Access Modifiers: there is no privacy
 - Clone objects (shallow): const clone Food = { ...food }, const cloneFood = Object.assign({}, food)
 - Clone objects (deep): JSON.parse(JSON.stringify(food)); Lodash DeepClone
@@ -171,6 +186,7 @@ Variables
 - Variable Scoping: single scope only; 'global var'  makes variable globally accessible from other scopes
 
 OOP
+- Is Everything an Object?: yes
 - Access Modifiers: 'public' for public, 'protected' for protected, 'private' for private
 - Object interface definition: -
 - Object abstract definition (ABC package is needed): class ClassName(ABC):
