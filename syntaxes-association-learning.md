@@ -1,3 +1,8 @@
+## Best Practices
+
+### PHP
+- use declare(strict_types=1) in all files to avoid type coercion in return types and arguments, without which passing a string of "1" will be accepted by this  definition "int $a" because "1" is numeric and can be coerced to an integer
+
 ## Interpreted vs. Compiled
 
 ### Workflow
@@ -105,6 +110,15 @@ Unicode: rune
 
 ### PHP
 
+Code Organization
+- General: there is no module and package concept like in Python for code organization
+- File Management: the general practice is 'one class per file' (PSR-1 standard) and namespace rules (PSR-4)
+- Package Management: composer is used to install packages
+- Verbosity: more verbose than Python
+- Enforced Type Hinting: no (using type hinting is not mandatory)
+- Operator Coercion: yes (1 + "1" will coerce "1" to 1 and no errors will be thrown; this behavior cannot be avoided)
+- Type Hinting Coercion: yes (type hinting int $a will accept "1" and convert it to 1, use strict_types to avoid this behavior)
+
 Variables
 - Declaration: $variableName = 'value'
 - Scoping: single scope only; 'global $variableName' makes variable globally accessible from other scopes
@@ -143,6 +157,17 @@ OOP
 - Object abstract definition: -
 
 ### Python
+
+Code Organization
+- General: module and package structure (the entrypoint of a package is the \__init__.py file)
+- File Management: the general practice is 'one module = one file', with one or more classes in a file
+- Package Management: pip (preferred installed program) is used to install packages
+- Verbosity: less verbose than PHP
+- Enforced Type Hinting: no (using type hinting is not mandatory)
+- Operator Coercion: no (1 + "1" will throw an exception)
+- Type Hinting Coercion: no (declaration 'int varName' will raise an error if "1" is used, so it will not attempt to coerce it to 1)
+
+Variables 
 - Variable Scoping: single scope only; 'global var'  makes variable globally accessible from other scopes
 
 OOP
