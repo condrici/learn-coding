@@ -1,5 +1,9 @@
 # JavaScript
 
+## Documentation
+- import statement: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+- export statement: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+
 ## Internals
 
 ### Workflow
@@ -9,7 +13,9 @@
 4) The V8 Runtime Environment works fast because it compiles JavaScript into native machine code, even though JavaScript is an interpreted language
 
 ### Syntax Blueprints
-- ECMAScript (blueprint for creating a scripting language that is used by JavaScript)
+- ECMAScript (blueprint for creating a scripting language that is used by JavaScript; 
+the names JavaScript and ECMAScript are oftentimes used interchangeably, 
+but one is the language name, the other is its blueprint)
 
 ## Module Formatting Systems
 
@@ -29,6 +35,8 @@ A a superset of a programming language is an extension that introduces new featu
 ### TypeScript (most popular JavaScript superset)
 - originated from the shortcomings of JavaScript
 - it is not a programming language by itself, but a superset of JavaScript
+- checks a program for errors before execution (i.e. "static type checking")
+- never changes the runtime behavior of JavaScript code (if you move code from JavaScript to TypeScript, it is guaranteed to run the same way, even if TypeScript thinks that the code has type errors)
 - adds type annotations
 - adds type inference
 - adds type erasure
@@ -37,7 +45,14 @@ A a superset of a programming language is an extension that introduces new featu
 - adds namespaces
 - adds tuples
 - adds async/await
+- adds Generics type hinting: type ObjectWithNameArray = Array<{ name: string }>;
+- adds additional primitive types (any, unknown, never, void)
+- adds composite types (type MyBool = true | false; type WindowStates = "open" | "closed" | "minimized";)
+- read more: https://www.typescriptlang.org/
 
+### TypeScript Examples
+- const obj = { width: 10, height: 15 }; in JavaScript trying to access a nonexistent object property obj.heigth (has a typo) would not throw an exception, but it would rather return NaN
+- console.log(4 / []); in JavaScript this would log Infinity, but TypeScript, though, considers division of number by an array to be a nonsensical operation, and will issue an error
 ## NodeJS
 
 Node.js is an open-source and cross-platform runtime environment built on top of the "V8 Runtime Environment" for executing JavaScript code outside a browser, it is written in C++. Another example of a runtime environment is the Zend Engine used for PHP.

@@ -125,9 +125,9 @@ Code Organization
 - File Management: the general practice is 'one class per file' (PSR-1 standard) and namespace rules (PSR-4)
 - Package Management: composer is used to install packages
 - Verbosity: more verbose than Python
-- Enforced Type Hinting: no (using type hinting is not mandatory)
 - Operator Coercion: yes (1 + "1" will coerce "1" to 1 and no errors will be thrown; this behavior cannot be avoided)
 - Type Hinting Coercion: yes (type hinting int $a will accept "1" and convert it to 1, use strict_types to avoid this behavior)
+- Type Hinting Inference: yes (if the type is not defined, it will be inferred from the assigned value)
 
 Variables
 - Declaration: $variableName = 'value'
@@ -152,6 +152,8 @@ OOP
 
 Code Organization
 - General: there is a module concept for which there are different implementations (CommonJS, ECMAScript, TypeScript)
+- Operator Coercion: yes ("" == 0 is true, 1 < x < 3 is also true for any value of x)
+- Type Hinting Inference: yes (if the type is not defined, it will be inferred from the assigned value)
 
 Variables
 - Declaration: let variableName = 'value' (types of declarations: let, var, const)
@@ -168,7 +170,7 @@ OOP
 - Access Modifiers: there is no privacy
 - Clone objects (shallow): const clone Food = { ...food }, const cloneFood = Object.assign({}, food)
 - Clone objects (deep): JSON.parse(JSON.stringify(food)); Lodash DeepClone
-- Object interface definition (TypeScript only): interface InterfaceName {} 
+- Object interface definition (TypeScript only): interface InterfaceName {name: string, id: number} 
 - Object abstract definition: -
 
 ### Python
@@ -178,9 +180,9 @@ Code Organization
 - File Management: the general practice is 'one module = one file', with one or more classes in a file
 - Package Management: pip (preferred installed program) is used to install packages
 - Verbosity: less verbose than PHP
-- Enforced Type Hinting: no (using type hinting is not mandatory)
 - Operator Coercion: no (1 + "1" will throw an exception)
 - Type Hinting Coercion: no (declaration 'int varName' will raise an error if "1" is used, so it will not attempt to coerce it to 1)
+- Type Hinting Inference: yes (if the type is not defined, it will be inferred from the assigned value)
 
 Variables 
 - Variable Scoping: single scope only; 'global var'  makes variable globally accessible from other scopes
