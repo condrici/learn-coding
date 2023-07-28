@@ -13,4 +13,5 @@
 - Style Guide: Google TypeScript
 - Quality Control: static code analysis, profiler, unit tests, api tests
 - use 'use strict' in all files (enables a wide range of type checking behavior that results in stronger guarantees of program correctness)
+- use strictNullChecks on (when a value is null or undefined, you will need to test for those values before using methods or properties on that value)
 - use compiler flag noImplicitAny so that the compiler throw an error if the type is not specified (instead of inferring any as type)

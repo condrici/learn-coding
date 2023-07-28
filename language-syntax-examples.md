@@ -5,20 +5,31 @@
 ```
 // JavaScript Coding Style is used here
 // Just like with JavaScript, semicolons are most of the times not required
+// Constructor never has a return type
 
-class VirtualPoint {
-
-  // Typed, public/protected/private access modifiers
-  // Optional modifier (?:)
+class VirtualPoint extends OtherClass {
   
   public x?: number;
   protected y: number;
   private z: number;
  
-  // Constructors never have a return type
-  constructor(x: number, y: number): {
-    this.x = x;
+  constructor(x?: number, y: number, z: number): {
+    this.x = x ?? 0; // null coalescing
     this.y = y;
+    this.z = z;
+    super(); //declaration that allows superclass access (OtherClass) by using 'this'
+  }
+  
+  // Getter method (if setter is not defined, the property is inferred as readonly)
+  // Getter and setters should have the same access level (public/protected/private)
+  get x() {
+    return this.x;
+  }
+  
+  // Setter method (if the type of the setter is not specified, it is inferred from the return type of the getter)
+  // Getter and setters should have the same access level (public/protected/private)
+  set y(value) {
+    this.y = value;
   }
   
     protected doSomething(): {

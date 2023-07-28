@@ -14,21 +14,30 @@ None: NoneType
 
 ### JavaScript (8)
 String: string, \
-Numeric: number, bigint \
+Numeric: number, bigint (numbers too large to be represented by number) \
+Sequence: array \
 Boolean: boolean \
+Binary: not supported \
 None: undefined, null \
-symbol \
-object
+Others: symbol, object \
+
+### TypeScript 5 (15)
+String: string, \
+Numeric: number, bigint \
+Sequence: array, read only array, enum, tuple, read only tuple \
+Boolean: boolean \
+Binary: not supported \
+None: undefined, null, any, unknown, void \
+Others: symbol, object \
 
 ### PHP (9)
 String: string, \
 Numeric: int, float \
 Boolean: bool \
-Array: arr \
-Object: obj \
-None: NULL, void (kind of the same but handled slightly different) \
-Resource \
-Callable (type signature cannot be used for this type)
+Sequence: array \
+Binary: not supported \
+None: null, void (kind of the same but handled slightly different) \
+Others: Object, Resource, Callable (no type signature) \
 
 ### GoLang (20)
 String: string \
@@ -54,10 +63,13 @@ General Characteristics
 - Type Coercion: yes (type hinting int $a will accept "1" and convert it to 1, use strict_types to avoid this behavior)
 - Type Inference: yes (if the type is not defined, it will be inferred from the assigned value)
 
+Specific Characteristics
+- Parent classes can access child classes when they are extended
+- Data is coerced in circumstances like calculating 1 + "1" ("1" becomes 1), no errors are thrown (cannot be disabled)
+- Values passed to typed parameters are coerced, as in 'int $a' will accept "1" which is a string (can be disabled)
+
 OOP Features
-- Object Types: anonymous
-- Object interface: yes (defined as: interface InterfaceName, can extend multiple interfaces)
-- Object abstraction: yes (defined as: abstract ClassName)
+- Object Declaration: anonymous, readonly, abstract, interface
 - Object constructor property promotion: yes (parameters can have their type and accessor defined)
 - Method and Property Access Modifiers: public, protected, private
 - Method Declaration: yes (access modifiers, return type, optional return type)
@@ -70,11 +82,6 @@ OOP Operations
 - Clone objects (shallow): object = clone object
 - Clone objects (deep): use special object method __clone()
 
-Very Important
-- Parent classes can access child classes when they are extended
-- Data is coerced in circumstances like calculating 1 + "1" ("1" becomes 1), no errors are thrown (cannot be disabled)
-- Values passed to typed parameters are coerced, as in 'int $a' will accept "1" which is a string (can be disabled)
-
 Syntax Examples
 - Ternary operator: $result = $condition ? 'foo' : 'bar';
 - Null coalescing operator: $env = $_SERVER['APP_ENV'] ?? 'dev';
@@ -83,10 +90,17 @@ Syntax Examples
 
 ### JavaScript (ECMAScript 5)
 
-Characteristics
+General Characteristics
+- Function types: internal, variable function, anonymous, async, await
 - General: there is a module concept for which there are different implementations (CommonJS, ECMAScript, TypeScript)
 - Operator Coercion: yes ("" == 0 is true, 1 < x < 3 is also true for any value of x)
 - Type Hinting Inference: yes (if the type is not defined, it will be inferred from the assigned value)
+
+Specific Characteristics
+- Specific features: async/await, callbacks, closures, promises
+- Callbacks (functions passed to parameters are used frequently because many JavaScript actions are asynchronous)
+- No concept of integer or float, everything is a number
+- Types should be lower case; String, Number, BigInt and Boolean (capital letters) are legal but are special built-in objects
 
 Variables
 - Declaration: let variableName = 'value' (types of declarations: let, var, const)
@@ -109,14 +123,18 @@ OOP Features
 - Object abstract definition: yes
 - Constructor property promotion: no
 
-Very Important
-- Callbacks (functions passed to parameters are used frequently because many JavaScript actions are asynchronous)
-- No concept of integer or float, everything is a number
-- Types should be lower case; String, Number and Boolean (capital letters) are legal but are special built-in objects
-
 ### TypeScript
 
+Specific Characteristics
+- Type Manipulation: generics, indexed access types, conditional types, mapped types, template literal types
+- Settings: --strictPropertyInitialization
+- No errors will be thrown if a class doesn't properly implement an interface, an abstract class will (use abstracts) 
+
 OOP Features
+- Class Access: yes (readonly)
+- Class Getters and Setters: yes (syntax: get methodName(), set methodName())
+- Class Signatures: yes (syntax: [s: string]: boolean | ((s: string) => boolean);)
+- Class Heritage: abstract ClassName (extends AbstractClass), interface InterfaceName (implements InterfaceName)  
 - Object Types: anonymous, generic (new in TypeScript)
 - Access Modifiers: public, protected, private, readonly
 - Method Declaration: yes (access modifiers, return type, optional return type)
@@ -126,10 +144,10 @@ OOP Features
 - Object abstraction: yes (defined as: abstract ClassName())
 - Constructor property promotion: yes (parameters can have their type and accessor defined)
 - Function Overloading: yes (functions can have the same name but different parameters)
-- Additional features: types, intersected types
+- Additional features: types, intersected types, generics
 
 Variables
-- Type annotations: yes (this is usually not needed, but it is supported)
+- Type Declarations: yes (this is usually not needed, but it is supported)
 
 Functions
 - Types: internal, anonymous, generic (new in TypeScript)
@@ -138,12 +156,9 @@ Functions
 - Overloading: yes
 - Declare 'this' in functions: yes
 
-Data Types
-- JS ES5 (string, number, bigint, boolean, undefined, null, symbol, object, array)
-- TS (any, unknown, void, enum, array type, read only array type, tuple, read only tuple)
-
-Very Important
-- use compiler flat noImplicitAny so that the compiler throw an error if the type is not specified (instead of inferring any as type)
+Operators
+- Non-null assertion operator (or null safe in PHP): x!.toFixed()
+- Determine type: typeof varName (possible values: string, number, bigint, boolean, symbol, undefined, object, function) 
 
 ### Python
 
