@@ -126,7 +126,7 @@ OOP Features
 ### TypeScript
 
 Specific Characteristics
-- Type Manipulation: generics, indexed access types, conditional types, mapped types, template literal types
+- Type Manipulation: generics, indexed access types, conditional types, mapped types, template literal types, utility types
 - Settings: --strictPropertyInitialization
 - No errors will be thrown if a class doesn't properly implement an interface, an abstract class will (use abstracts) 
 
