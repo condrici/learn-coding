@@ -12,6 +12,8 @@ Boolean: bool \
 Binary: bytes, byte array, memoryview \
 None: NoneType
 
+Compounds: generics
+
 ### JavaScript (8)
 String: string, \
 Numeric: number, bigint (numbers too large to be represented by number) \
@@ -29,6 +31,8 @@ Boolean: boolean \
 Binary: not supported \
 None: undefined, null, any, unknown, void \
 Others: symbol, object \
+
+Compounds: generics, indexed access types, conditional types, mapped types, template literal types, utility types
 
 ### PHP (9)
 String: string, \
@@ -147,11 +151,11 @@ OOP Features
 - Additional features: types, intersected types, generics
 
 Variables
-- Type Declarations: yes (this is usually not needed, but it is supported)
+- Annotation types: yes (this is usually not needed, but it is supported)
 
 Functions
-- Types: internal, anonymous, generic (new in TypeScript)
-- Type annotations: parameter type, return type
+- Definition types: function statement, function expression, anonymous, immediately invoked, constructor, getter, hosting, generic, arrow
+- Annotation types: parameter type, return type
 - Parameters: type hint, optional parameter, optional callback parameter
 - Overloading: yes
 - Declare 'this' in functions: yes

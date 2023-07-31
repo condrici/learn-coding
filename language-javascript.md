@@ -1,8 +1,31 @@
 # JavaScript
 
-## Documentation
-- import statement: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
-- export statement: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+## Summary
+
+Features
+- Variables: var (global scope, immutable), let (block scope, mutable), const (immutable)
+- Functions: statement, expression, anonymous, immediately invoked, constructor, arrow, async 
+- TypeScript Compound Types: generics, indexed access types, conditional types, mapped types, template literal types, utility types
+- Built-in Async Functions: setTimeout, fetch
+- Specific Syntax: prototypes, async/await, promises, import/export, closures, callbacks, generators
+
+Key Concepts
+- Currying (transforms a function that receives many arguments into a sequence of functions that receive only one argument)
+- Hosting (var variables only, which are immutable, can be declared after assignment without generating any errors; this can be disabled)
+- Callbacks (function passed as an argument to another function; very common in JavaScript)
+- Async functions ()
+
+Key Characteristics
+
+- It is a prototype based, object oriented language, where almost everything is an object except primitives
+- TypeScript is a superset of JavaScript, think of it as a wrapper, that adds more OOP syntax support
+- The prototype is an object that contains properties and methods that are inherited by objects created from a constructor
+- With hoisting, you can declare variable and functions after their assignment (this happens with variables defined with 'var' only)
+
+Best Practices
+- Use 'strict mode' directive at the top so that JavaScript doesn't allow undeclared variables (i.e. hoisting)
+- Put all declarations at the top of each script or function (also to avoid hosting confusion when strict mode is not used)
+- In async functions is better not to use variables outside the function because that can cause unexpected behaviours
 
 ## Internals
 
@@ -59,3 +82,14 @@ Node.js is an open-source and cross-platform runtime environment built on top of
 
 ### Main Characteristics
 Package Management: npm (node package manager)
+
+## Syntax
+
+### Function Definitions
+- Statement (uses hoisting; i.e. the interpreter executes these first, when called, before running any other code)
+- Expression (basic definition)
+- Anonymous (used as arguments)
+- Immediately Invoked (they trigger immediately, you just add () after an anonymous function)
+- Constructor (function that executes in the global scope, used to create multiple objects; new Function())
+- Arrow (shorthand for declaring functions)
+- Async (creates a binding of a new async function to a given name)

@@ -53,6 +53,16 @@ Compiled:
 - Not cross-platform
 - Initial compilation takes time
 
+## Synchronous vs Asynchronous
+
+Synchronous Code
+- executes top to the bottom, in a simple sequential order
+
+Asynchronous Code
+- when interpreter reaches asynchronous code it creates an additional thread
+- so the synchronous code will continue executing at the same time with the asynchronous code
+- i.e. the asynchronous code will not interrupt the synchronous code from executing
+
 ## Examples of Programming Languages
 
 ### Python
